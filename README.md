@@ -5,7 +5,7 @@
 É uma ferramenta de versionamento de código ou controle de versão, é usado para se manter um histórico de todas as alterações que foram realizadas no projeto, assim sendo mais fácil caso seja necessario visualizar um determinado ponto e voltar a ele. E com essa ferramenta é possível trabalhar com mais de um desenvolvedor em um projeto, alterando o mesmo código ou até a mesma linha, sem ter que utilizar algum
 software de comparação ou esperar que outro programador termine sua modificação, antes de fazer a sua implementação.
 
-**_Começando a versionar_**
+### Começando a versionar
 * Baixe e instale o [GIT](https://git-scm.com/)
 * Baixe e instale o terminal [cmder](https://cmder.net/)
 
@@ -23,7 +23,7 @@ git config –global user.name "Nome de usuario do GitHub"
 git config –global user.email "Email cadastrado no GitHub"
 ```
 
-* **_Entrando em uma determinada pasta pelo terminal_**
+### Entrando em uma determinada pasta pelo terminal
 
 ```
 cd [NomeDoDiretorio/Pasta]  --> Entra no diretorio referido.
@@ -38,7 +38,7 @@ clear                       -->Limpa o terminal
 
 > A tecla TAB pode ajudar na hora de digitar o nome do diretorio pois ele alto-completa a digitação.
 
-* **_Criando um repositorio:_**
+### Criando um repositorio:
 
 ```
 git init --> Transforma a pasta onde o terminal se localiza em um repositorio assim acompanhando o versionamento daquele diretorio.
@@ -46,7 +46,7 @@ git init --> Transforma a pasta onde o terminal se localiza em um repositorio as
 git status --> Retorna o status atual do repositorio, mostrando se é necessário commitar tal trabalho.
 ```
 
-* **_Após ter criado o repositorio._**
+### Após ter criado o repositorio.
 
 Tudo que se tem que fazer agora é adicionar os arquivos da aplicação, na pasta do projeto, seguido dessa adição podemos rodar o comando **git status** e perceper que é retornado a seguinte mensagem:
 
@@ -66,7 +66,7 @@ git add .[extenção]               --> Será acompanhado todos os arquivos com 
 git add .                         --> Será acompanhado todos os arquivos do diretorio 
 ```
 
-* **_Commitando_**
+### Commitando
 
 Após dado o comando **git add** se for checado os status será retornado que há alterações para serem comitadas.
 
@@ -79,17 +79,17 @@ git commit -m "Mensagem breve sobre o trabalho realizado"
 ```
 Se for checado o status de novo sera retornado que não há alterações pendentes de salvamento.
 
-* **_Cituações para ignorar_**
+### Cituações para ignorar
 
 Digamos que você esteja trabalhando em projeto e nele você adiciona documentos de notificação, pacotes pelo npm ou de modo geral algo que não se quer que o git faça o controle de suas versões. Para que seja possivel fazer com que o git ignore determinado arquivo  precisamos apenas:
 
 --Crie dentro da pasta do projeto, um arquivo denominado de **.gitignore**, e dentro deste arquivo coloque o nome do arquivo ou pasta que se deseja ser ignorada.
 
-* **_RECAPITULANDO_**
+### RECAPITULANDO
 
 Começou a trabalhar no projeto, editou todos os arquivos e tal, abra o **cmder** vá ate a pasta do projeto e verifique o estatus caso queira com **git status**,  neste caso o estatus dirá que se tem mudanças pendentes, então faremos um **git add .**, e após isso faremos um **git commit –m “mensagem”** salvando assim as alterações.
 
-* **_Pulando Passos sem errar_**
+### Pulando Passos sem errar
 
 Com o comando:
 ```
@@ -98,7 +98,7 @@ git commit -a -m "Mensagem"
 
 Fará com que o comando **Add** não precise ser dado, pois fará isso automaticamente, porem o arquivo não irá para a _stage área_ o que significa que ele terá um salvamento direto. Porém é aconselhável deixar os arquivos na _stage área_ pois assim é possível reverter diferentes tipos de alterações ou seja remover determinado arquivo que não se queria na _stage_
 
-* **_Sabendo o que foi alterado na edição**_
+### Sabendo o que foi alterado na edição
 
 Para consultar todas as alterações feitas em um arquivo que está em seu diretório de trabalho mas que ainda não foi adicionado para a stage se pode utilizar o seguinte comando:
 
@@ -132,7 +132,7 @@ Porem Temos alguns problemas com esse log dependendo do tamanho do histórico do
 git log –p –n --> Sendo n o número de entradas que queremos trazer.
 ```  
 
-* **_Relatório detalhado_**
+### Relatório detalhado
 
 Ficar vendo linha por linha no terminal pode ser muito improdutivo por isso temos o comando:
 
@@ -142,7 +142,7 @@ gitk
 
 > Com esse comando será aberto uma interface gráfica, que mostra todas as alterações desde o commit inicial. E clicando neste commit será mostrado as alterações que foram feitas.
 
-* **_Desfazendo e revertendo alterações_**
+### Desfazendo e revertendo alterações
 
 Para editar o ultimo commit feito, fazemos as alterações necessárias em segida adicionamos os arquivos alterados na stage área e ao fazer o commit usamos o comando:
 
@@ -174,7 +174,7 @@ Para apagar os arquivos já apagados do repositório e fazer o git deixar de aco
 Git rm [nome do arquivo]
 ``` 
 
-* Tag e Branch
+### Tag e Branch
 
 Uma **tag** é uma etiqueta, um ponto de atalho para um determinado status do sistema, geralmente os desenvolvedores utilizam as **tag** para criar marcações nas versões diferentes de m sistema (ex: V1.0...) assim facilitando a troca de status ou seja uma data e hora especifica:
 Para listar as tag no sistema (as já criadas)
@@ -199,6 +199,75 @@ Com esse comando será retornado a chave de cada commit, e para referenciar a ta
 ```
 Git tag –a [nome da tag] [chave do commit] –m “mensagem”
 ```
+
+Se o programador quiser saber mais sobre uma:
+git show [Tag]
+
+### Como usar uma tag
+
+Com a tag criada e referenciada é possível visualizar os arquivos que foram commitados na tag referida.
+```
+Git checkout v0.0
+```
+> *ao invés de v0.0 podemos usar o “master” para podermos voltar ao branch principal e o inverso se faz da mesma forma ao querermos sair do master para o v0.0.
+> *v0.0 é o nome da tag que foi criada para fazer referência ao primeiro commit do projeto.
+E assim será feito a troca dos arquivos para aquela versão.
+(Exemplo do desenho)
+
+### Como deletar uma tag
+```
+Git tag –d [Nome da tag]
+```
+>As tag’s podem não ser uma boa escolha de usabilidade e por isso é recomendado usar branch’s.
+
+### Branch
+O branch pode ser comparado em sentido figurado a ramificação dos galhos de uma arvore e com eles é permitido que o user trabalhe com várias ramificações, com várias segmentações de seu sistema fazendo commits que não alteram as outras ramificações.
+
+Para criarmos um branch fazemos da seguinte forma:
+
+```
+Git branch test
+```
+> ”test” é nome do ramo que queremos criar
+Depois de criado o ramo se deve fazer a transição dos arquivos trabalhados com o comando:
+```
+Git checkout test
+```
+> checkout - -> retorna que foi trocado de ramo.
+Quando se sentir mas a vontade podemos usar um comando mais direto:
+```
+Git checkout –b test
+```  
+> No caso será criado o branch fazendo já a transferência dos arquivos
+Feito isso já é possivel trabalhar no ambiente normalmente. Ao “termino” do trabalho, é feito um commit e se for de preferência, voltamos ao branch master
+```
+Git checkout master
+``` 
+A partir do momento que realmente for concluído o trabalho presente no branch criado precisamos (apenas caso queira ou precise) implantar aquele código no máster ou seja no projeto principal e para isso:
+-_Teremos que entrar no branch máster._
+-_E em seguida fazer o merge_
+
+```
+Git merge [nome do branch que se quer pegar as mudanças]
+```
+>”merge” Pode ser traduzido para juntar/mesclar
+>*Algo importante a salientar é que o sistema (a localização do user) sempre terá que estar no branch que é o destino das suas alterações (no caso a origem é o teste de onde as mudanças virão e o máster é o destino que essas mudanças se adaptarão)*
+
+**_Caso esteja usando um editor de texto como o vscode, ao fazer o merge o editor lhe auxiliará sobre quais as mudanças feitas e possíveis correção de código por conta da sobreposição de escrita, isso tudo com apenas alguns cliques_**
+
+Caso não queira mais utilizar determinado branch podemos deletado com o comando:
+```
+Git branch –d [nome do branch]
+```
+E se caso se esqueça quais foram os branch’s criados podemos usar o seguinte comando para ver os existentes:
+```
+Git branch
+```
+
+### Os conflitos de merge
+
+Isso acontece quando se tem alterações das mesmas linhas de código feito ou não por mais de um programador. Ao tentar fazer o merge o git retornará uma mensagem informando que o merge automático foi cancelado por esse motivo e que para prosseguir o user terá que corrigir os conflitos na “raça” (mas como já foi comentado o vscode pode ajudar muito nesse quesito). O git dará um auxilio mostrando as linha que se situam os conflitos dando a opção de continuar com um dos códigos. Assim que se corrigir os conflitos terá que ser feito o commit para concluir o merge.
+
 
 
 
