@@ -297,7 +297,11 @@ git feltch origin [branch]  - -> onde se quer colocar
 ```
 > O feltch serve quando não se quer fazer um merge automático dos dados que estão no servidor com o projeto trabalhado.
 
-
+# A FAZER.
+- [ ] completar documentação add detalhes 
+- [ ] fazer page estatica como guia pratico e bem simples
+- [ ] add imagens
+- [ ] renomear repositorio
 
 
 
