@@ -268,6 +268,36 @@ Git branch
 
 Isso acontece quando se tem alterações das mesmas linhas de código feito ou não por mais de um programador. Ao tentar fazer o merge o git retornará uma mensagem informando que o merge automático foi cancelado por esse motivo e que para prosseguir o user terá que corrigir os conflitos na “raça” (mas como já foi comentado o vscode pode ajudar muito nesse quesito). O git dará um auxilio mostrando as linha que se situam os conflitos dando a opção de continuar com um dos códigos. Assim que se corrigir os conflitos terá que ser feito o commit para concluir o merge.
 
+### Git e Rede Local
+
+Com o GitHub podemos ajudar outros desenvolvedores em seus projetos.
+Ao fazer o clone dos arquivos, edita-los, e finalizar o trabalho mesmo commitando eles os arquivos não vão necessariamente direto para o repositório de origem, eles ficam na sua máquina local, e para fazer com que este trabalho seja enviado para seu repositório de origem temos o seguinte comando a executarmos:
+* Para fazer isso daremos um “push” e para tal necessitaremos saber o nome do nosso servidor remoto:
+```
+git remote 
+```  
+
+* Para mandar agora:
+```
+git push origin master 
+```
+> Ou seja o git enviará os arquivos para o servidor origin que estão agora no branch máster.
+* Quando se termina uma modificação em um repositório onde mais de um programador trabalha é necessário dar um “pull” que é: traga todos os dados do servidor até o momento.
+
+```
+git pull origin master
+``` 
+> origin - -> de onde vai trazer
+> máster - -> pra onde vai mandar
+
+* O git pull tem um pequeno porem ele faz uma busca e praticamente faz um merge desses dados que estão no servidor no servidor com o repositório trabalhado. As vezes isso não é interessante então quando não quiser fazer isso é necessário ter um branch separado e fazer um feltch
+
+```
+git feltch origin [branch]  - -> onde se quer colocar
+```
+> O feltch serve quando não se quer fazer um merge automático dos dados que estão no servidor com o projeto trabalhado.
+
+
 
 
 
