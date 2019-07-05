@@ -83,7 +83,7 @@ Se for checado o status de novo sera retornado que não há alterações pendent
 
 Digamos que você esteja trabalhando em projeto e nele você adiciona documentos de notificação, pacotes pelo npm ou de modo geral algo que não se quer que o git faça o controle de suas versões. Para que seja possivel fazer com que o git ignore determinado arquivo  precisamos apenas:
 
---Crie dentro da pasta do projeto, um arquivo denominado de **.gitignore**, e dentro deste arquivo coloque o nome do arquivo ou pasta que se deseja ser ignorada.
+> Crie dentro da pasta do projeto, um arquivo denominado de **.gitignore**, e dentro deste arquivo coloque o nome do arquivo ou pasta que se deseja ser ignorada.
 
 ### RECAPITULANDO
 
@@ -115,7 +115,7 @@ git diff --staged
 Para podermos ver os coommit’s dados no projeto desde o início fazemos o seguinte comando:
 
 ```
-git log  Ele retorna um histórico de todos os commit’s 
+git log --> Ele retorna um histórico de todos os commit’s 
 ```  
 
 Neste histórico teremos uma espécie de “chave” a chamada **HASH** que serve para referenciar esses commit’s caso se queira voltar a uma versão especifica do projeto.
